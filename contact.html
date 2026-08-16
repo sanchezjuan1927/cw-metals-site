@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; RFQ — CW Metals Inc.</title>
+  <meta name="description" content="Submit an RFQ for ornamental metal stamping, architectural sheet metal, laser cutting, or field installation in New York City. 24-hour response. File upload to 250 MB.">
+  <link rel="canonical" href="https://cwmetalsinc.com/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    .contact-drop-item:hover { background:rgba(255,255,255,0.04); }
+    #contact-nav-btn.open svg { transform:rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ════════════════════════════════════════════════════ -->
+<header class="nav-blur fixed top-0 left-0 right-0 z-50" id="site-nav">
+  <div class="max-w-site mx-auto px-site">
+    <nav class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3" aria-label="CW Metals Inc. Homepage">
+        <div class="w-0.5 h-7 rounded-full" style="background:linear-gradient(to bottom,var(--copper),rgba(200,136,58,0.2));"></div>
+        <div>
+          <div class="font-display font-bold text-lg leading-tight tracking-tight" style="color:var(--ink-on-dark);">CW Metals</div>
+          <div style="font-size:0.5rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel);">Inc. — New York City</div>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-8" style="margin-left:3rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="awards.html" class="nav-link">Awards</a>
+        <div class="relative" id="contact-nav-wrapper">
+          <button class="nav-link active" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:5px;" id="contact-nav-btn" aria-expanded="false" aria-haspopup="true">
+            Contact
+            <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transition:transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="contact-dropdown" style="display:none;position:absolute;right:0;top:calc(100% + 10px);min-width:215px;background:#13161a;border:1px solid rgba(168,178,188,0.1);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:60;overflow:hidden;">
+            <a href="tel:9174167906" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--text-steel);font-size:0.8125rem;font-weight:500;text-decoration:none;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>917-416-7906</a>
+            <div style="height:1px;background:rgba(168,178,188,0.07);margin:0 12px;"></div>
+            <a href="mailto:estimating@cwmetalsinc.com" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--text-steel);font-size:0.8125rem;font-weight:500;text-decoration:none;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>estimating@cwmetalsinc.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:9174167906" class="hidden md:flex items-center gap-2" style="color:var(--steel);font-size:0.8125rem;font-weight:500;text-decoration:none;">
+          <svg class="w-3.5 h-3.5" style="color:var(--copper);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          917-416-7906
+        </a>
+        <a href="#rfq" class="btn-copper" style="padding:9px 22px;font-size:0.78rem;">Get Quote</a>
+        <button class="lg:hidden flex flex-col gap-1.5 p-1" aria-label="Open menu" id="mobile-menu-btn">
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-3.5 h-0.5 block" style="background:var(--copper);"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-drawer lg:hidden" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products &amp; Capabilities</a>
+    <a href="portfolio.html">Projects &amp; Portfolio</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:9174167906" style="color:var(--copper);">917-416-7906</a>
+  </div>
+</header>
+
+
+<!-- ═══ PAGE HERO ════════════════════════════════════════════ -->
+<div class="page-hero">
+  <div class="max-w-site mx-auto px-site">
+    <div class="page-hero-eyebrow">
+      <span class="page-hero-line"></span>
+      Estimating Portal
+    </div>
+    <h1 class="font-display" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:800;color:var(--text-parchment);line-height:1.1;">
+      Contact &amp; RFQ
+    </h1>
+    <p style="font-size:1rem;font-weight:300;color:var(--text-steel);line-height:1.75;max-width:480px;margin-top:1rem;">
+      Submit drawings, ask a question, or confirm whether we cover your project location. Our estimating team responds within 24 business hours.
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══ CONTACT INFO + RFQ FORM ═════════════════════════════ -->
+<section id="rfq" style="background:var(--bg-limestone);" class="on-light py-16 lg:py-20">
+  <div class="max-w-site mx-auto px-site">
+
+    <div style="display:grid;gap:3rem;align-items:start;" class="lg:grid-cols-3">
+
+      <!-- LEFT: Contact details -->
+      <div>
+        <p class="section-label" style="color:#8B5A1A;margin-bottom:1.5rem;">Get in Touch</p>
+
+        <div style="display:flex;flex-direction:column;gap:2rem;">
+          <!-- Phone -->
+          <div>
+            <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-ink-soft);margin-bottom:0.5rem;">Phone</p>
+            <a href="tel:9174167906" class="font-display" style="font-size:1.5rem;font-weight:700;color:var(--text-ink);text-decoration:none;display:block;">917-416-7906</a>
+            <p style="font-size:0.8rem;color:var(--text-ink-soft);margin-top:0.25rem;">Prefer to talk it through first? Call directly.</p>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-ink-soft);margin-bottom:0.5rem;">Email</p>
+            <a href="mailto:estimating@cwmetalsinc.com" style="font-size:0.9375rem;font-weight:600;color:#8B5A1A;text-decoration:none;display:block;word-break:break-all;">estimating@cwmetalsinc.com</a>
+            <p style="font-size:0.8rem;color:var(--text-ink-soft);margin-top:0.25rem;">
+              Received by: <span class="verify">[[VERIFY: who receives RFQs — estimator name]]</span>
+            </p>
+          </div>
+
+          <!-- Address -->
+          <div>
+            <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-ink-soft);margin-bottom:0.5rem;">Shop Address</p>
+            <p style="font-size:0.9375rem;color:var(--text-ink);line-height:1.6;">
+              <span class="verify">[[VERIFY: full street address, borough, zip]]</span><br/>
+              New York City
+            </p>
+          </div>
+
+          <!-- Hours -->
+          <div>
+            <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-ink-soft);margin-bottom:0.5rem;">Shop Hours</p>
+            <p style="font-size:0.875rem;color:var(--text-ink);line-height:1.7;">
+              <span class="verify">[[VERIFY: regular shop hours]]</span>
+            </p>
+            <p style="font-size:0.75rem;color:var(--text-ink-soft);margin-top:0.375rem;">
+              Receiving / delivery hours: <span class="verify">[[VERIFY]]</span>
+            </p>
+          </div>
+
+          <!-- Service area note -->
+          <div style="background:rgba(160,103,47,0.06);border:1px solid rgba(160,103,47,0.15);border-radius:4px;padding:1rem 1.25rem;">
+            <p style="font-size:0.75rem;font-weight:600;color:#7A4E1A;margin-bottom:0.375rem;">Service Area</p>
+            <p style="font-size:0.8rem;color:var(--text-ink-soft);line-height:1.6;">Installation across all five boroughs. Include your project address in the RFQ and we'll confirm coverage in our first response.</p>
+            <a href="areas.html" style="font-size:0.75rem;font-weight:600;color:#8B5A1A;text-decoration:none;display:inline-block;margin-top:0.5rem;">View Areas We Serve →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: RFQ Form (spans 2 columns) -->
+      <div style="grid-column:span 2;">
+        <p class="section-label" style="color:#8B5A1A;margin-bottom:1.5rem;">Submit an RFQ</p>
+
+        <form class="rfq-panel" style="padding:2rem 2.25rem;" novalidate aria-label="Request for Quote form">
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:1.25rem;">
+            <div><label class="form-label" for="rfq-company">Company Name <span style="color:var(--copper);">*</span></label><input class="form-input" type="text" id="rfq-company" name="company" placeholder="Acme Construction LLC" required autocomplete="organization"/></div>
+            <div><label class="form-label" for="rfq-contact">Contact Name <span style="color:var(--copper);">*</span></label><input class="form-input" type="text" id="rfq-contact" name="contact" placeholder="Jane Smith" required autocomplete="name"/></div>
+            <div><label class="form-label" for="rfq-email">Email <span style="color:var(--copper);">*</span></label><input class="form-input" type="email" id="rfq-email" name="email" placeholder="estimating@yourfirm.com" required autocomplete="email"/></div>
+            <div><label class="form-label" for="rfq-phone">Phone</label><input class="form-input" type="tel" id="rfq-phone" name="phone" placeholder="(212) 555-0100" autocomplete="tel"/></div>
+            <div style="grid-column:1/-1;"><label class="form-label" for="rfq-project">Project Name / Address <span style="color:var(--copper);">*</span></label><input class="form-input" type="text" id="rfq-project" name="project" placeholder="e.g. 250 Park Avenue Cornice Restoration, Manhattan" required/></div>
+            <div><label class="form-label" for="rfq-bid-date">Bid Due Date</label><input class="form-input" type="date" id="rfq-bid-date" name="bid_date"/></div>
+            <div><label class="form-label" for="rfq-delivery">Required Delivery / Schedule</label><input class="form-input" type="text" id="rfq-delivery" name="delivery" placeholder="e.g. 6-week lead time, install by Oct 15"/></div>
+            <div><label class="form-label" for="rfq-project-type">Project Type <span style="color:var(--copper);">*</span></label><select class="form-input" id="rfq-project-type" name="project_type" required><option value="" disabled selected>Select type…</option><option value="landmark-restoration">Landmark / Historic Restoration</option><option value="new-construction">New Construction</option><option value="commercial-renovation">Commercial Renovation</option><option value="residential">High-End Residential</option><option value="institutional">Institutional / Educational</option><option value="local-law-11">Local Law 11 / FISP</option><option value="other">Other</option></select></div>
+            <div><label class="form-label" for="rfq-material">Primary Material <span style="color:var(--copper);">*</span></label><select class="form-input" id="rfq-material" name="material" required><option value="" disabled selected>Select material…</option><option value="copper">Copper</option><option value="steel-galvanized">Steel — Galvanized</option><option value="steel-stainless">Steel — Stainless</option><option value="aluminum">Aluminum</option><option value="zinc">Zinc / Terne</option><option value="lead-coated-copper">Lead-Coated Copper</option><option value="bronze">Bronze</option><option value="tbd">TBD / Need Consultation</option></select></div>
+            <div style="grid-column:1/-1;"><label class="form-label" for="rfq-scope">Scope of Work / Notes</label><textarea class="form-input" id="rfq-scope" name="scope" rows="5" style="resize:none;" placeholder="Describe the fabrication scope: cornice sections, sq. ft. of cladding, stamping profiles, laser cutting quantities, installation requirements, bid deadline, etc."></textarea></div>
+          </div>
+
+          <!-- File Dropzone -->
+          <div style="margin-bottom:1.5rem;">
+            <label class="form-label" style="margin-bottom:0.75rem;">Upload Plans, Drawings &amp; Specs</label>
+            <div class="dropzone relative" id="rfq-dropzone" role="button" aria-label="Upload files">
+              <input type="file" id="rfq-files" name="files" multiple accept=".pdf,.dwg,.dxf,.stp,.step,.rvt,.ifc,.jpg,.jpeg,.png,.tif,.tiff,.zip"/>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;pointer-events:none;">
+                <svg class="w-10 h-10" style="color:var(--text-steel);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                <div style="text-align:center;"><p style="color:var(--text-parchment);font-size:0.875rem;font-weight:500;margin-bottom:2px;">Drag &amp; drop files here</p><p style="color:var(--text-steel);font-size:0.75rem;">or <span style="color:var(--copper-light);text-decoration:underline;">browse to upload</span></p></div>
+                <p style="color:var(--text-steel-dim);font-size:0.75rem;">PDF, DWG, DXF, STP, RVT, IFC, JPG, PNG, ZIP · Max 250 MB per file</p>
+              </div>
+              <div id="rfq-file-list" class="hidden" style="margin-top:1rem;display:flex;flex-direction:column;gap:6px;pointer-events:none;"></div>
+            </div>
+          </div>
+
+          <p style="color:var(--text-steel-dim);font-size:0.75rem;line-height:1.6;margin-bottom:1.5rem;">All submitted documents are held in strict confidence under NDA. Files are transmitted via encrypted connection and used solely for estimating purposes.</p>
+
+          <button type="submit" class="btn-copper" style="width:100%;justify-content:center;padding:16px;font-size:0.875rem;">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Submit RFQ — Estimating Team Will Respond in 24h
+          </button>
+
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(168,178,188,0.08);">
+            <span style="color:var(--text-steel-dim);font-size:0.75rem;">Prefer to talk first?</span>
+            <a href="tel:9174167906" style="display:flex;align-items:center;gap:6px;color:var(--copper-light);font-size:0.8125rem;font-weight:600;text-decoration:none;">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+              Call 917-416-7906
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="site-footer" style="padding:3.5rem 0 2rem;">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:grid;gap:2.5rem;margin-bottom:2.5rem;" class="md:grid-cols-3">
+      <div>
+        <div class="footer-wordmark" style="margin-bottom:0.375rem;">CW Metals Inc.</div>
+        <div style="font-size:0.7rem;color:var(--text-steel-dim);">Ornamental Metal Stamping &amp; Architectural Sheet Metal · New York City</div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Navigation</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="products.html" class="footer-link">Products &amp; Capabilities</a>
+          <a href="portfolio.html" class="footer-link">Projects &amp; Portfolio</a>
+          <a href="areas.html" class="footer-link">Areas We Serve</a>
+          <a href="about.html" class="footer-link">About</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="mailto:estimating@cwmetalsinc.com" class="footer-link">estimating@cwmetalsinc.com</a>
+          <a href="tel:9174167906" class="footer-link">917-416-7906</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;border-top:1px solid rgba(168,178,188,0.06);">
+      <span id="footer-year" style="font-size:0.75rem;color:var(--text-steel-dim);">© 2025 CW Metals Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const yr = document.getElementById('footer-year');
+  if(yr) yr.textContent = '© ' + new Date().getFullYear() + ' CW Metals Inc. All rights reserved.';
+  const nav = document.getElementById('site-nav');
+  if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+
+  const dz = document.getElementById('rfq-dropzone');
+  const fi = document.getElementById('rfq-files');
+  const fl = document.getElementById('rfq-file-list');
+  if(dz && fi){
+    ['dragenter','dragover'].forEach(e=>dz.addEventListener(e,ev=>{ev.preventDefault();dz.classList.add('drag-over');}));
+    ['dragleave','drop'].forEach(e=>dz.addEventListener(e,ev=>{ev.preventDefault();dz.classList.remove('drag-over');}));
+    dz.addEventListener('drop',e=>{fi.files=e.dataTransfer.files;renderFiles(e.dataTransfer.files);});
+    fi.addEventListener('change',()=>renderFiles(fi.files));
+  }
+  function formatBytes(b){ return b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB'; }
+  function escHtml(s){ const d=document.createElement('div'); d.appendChild(document.createTextNode(s)); return d.innerHTML; }
+  function renderFiles(files){
+    if(!fl||!files||!files.length) return;
+    fl.innerHTML=''; fl.classList.remove('hidden');
+    Array.from(files).forEach(f=>{
+      const el=document.createElement('div');
+      el.style.cssText='display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:3px;font-size:0.75rem;background:rgba(200,136,58,0.06);border:1px solid rgba(200,136,58,0.12);';
+      el.innerHTML=`<svg width="12" height="12" style="color:var(--copper);flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span style="color:var(--text-parchment);font-weight:500;">${escHtml(f.name)}</span><span style="color:var(--text-steel-dim);margin-left:auto;">${formatBytes(f.size)}</span>`;
+      fl.appendChild(el);
+    });
+  }
+
+  const form = document.querySelector('form[aria-label="Request for Quote form"]');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault(); let ok=true;
+      this.querySelectorAll('[required]').forEach(f=>{
+        f.style.borderColor='';
+        if(!f.value.trim()){ f.style.borderColor='rgba(239,68,68,0.6)'; f.style.boxShadow='0 0 0 3px rgba(239,68,68,0.1)'; ok=false; }
+      });
+      if(ok){
+        const btn=this.querySelector('button[type="submit"]');
+        btn.textContent='✓ RFQ Submitted — We\'ll be in touch within 24h';
+        btn.style.background='linear-gradient(135deg,#2d5a1b,#3a7d24)';
+        btn.disabled=true;
+      }
+    });
+    form.querySelectorAll('[required]').forEach(f=>f.addEventListener('input',()=>{ f.style.borderColor=''; f.style.boxShadow=''; }));
+  }
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('open'));
+    mobileDrawer.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileDrawer.classList.remove('open')));
+  }
+  (function(){ const btn=document.getElementById('contact-nav-btn'); const dd=document.getElementById('contact-dropdown'); if(!btn||!dd) return; btn.addEventListener('click',function(e){ e.stopPropagation(); const open=dd.style.display!=='none'; dd.style.display=open?'none':'block'; btn.classList.toggle('open',!open); btn.setAttribute('aria-expanded',String(!open)); }); document.addEventListener('click',function(){ dd.style.display='none'; btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }); })();
+})();
+</script>
+</body>
+</html>

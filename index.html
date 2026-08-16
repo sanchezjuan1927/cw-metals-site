@@ -1,0 +1,888 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CW Metals Inc. — Architectural Sheet Metal · New York City</title>
+  <meta name="description" content="Architectural sheet metal fabrication, ornamental stamping, and laser cutting for architects, contractors, and owners across New York City. 39-13 24th Street, Long Island City. Eight landmark preservation awards.">
+  <link rel="canonical" href="https://cwmetalsinc.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="site.css" />
+
+  <style>
+    /* ── Hero ─────────────────────────────────────────── */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: var(--surface-dark);
+    }
+    .hero-slides { position: absolute; inset: 0; z-index: 0; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      opacity: 0; transition: opacity 1.8s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        linear-gradient(to top, rgba(19,20,21,0.85) 0%, rgba(19,20,21,0.4) 40%, rgba(19,20,21,0.15) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 10;
+      width: 100%;
+      padding: 0 1.5rem 5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    @media (min-width: 1024px) { .hero-content { padding: 0 2.5rem 6rem; } }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--copper); margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow-line {
+      width: 28px; height: 1px;
+      background: linear-gradient(90deg, var(--copper), transparent);
+    }
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink-on-dark);
+      font-size: clamp(2.75rem, 5vw, 5.25rem);
+      margin-bottom: 1.5rem;
+      max-width: 760px;
+    }
+    .hero-sub {
+      font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+      font-weight: 300;
+      color: var(--steel);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 0.875rem;
+      margin-bottom: 2.75rem;
+    }
+    .hero-awards-strip {
+      display: inline-flex; align-items: center; gap: 1rem;
+      padding: 10px 16px;
+      border: 1px solid rgba(184,115,51,0.2);
+      border-radius: 3px;
+      background: rgba(19,20,21,0.5);
+    }
+    .hero-awards-strip-divider {
+      width: 1px; height: 18px;
+      background: rgba(184,115,51,0.25);
+    }
+
+    /* ── Sheet metal product grid ─────────────────────── */
+    .product-type-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    @media (min-width: 768px) {
+      .product-type-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .product-type-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--ink-mid);
+    }
+    .product-type-item:nth-child(odd) { padding-right: 1.5rem; }
+    @media (min-width: 768px) {
+      .product-type-item { padding-right: 2rem; }
+    }
+    .product-type-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--copper);
+      flex-shrink: 0;
+    }
+
+    /* ── Specialty services strip ─────────────────────── */
+    .services-grid {
+      display: grid; gap: 1.25rem;
+    }
+    @media (min-width: 768px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* ── Category marquee ─────────────────────────────── */
+    @keyframes catMarquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .cat-marquee-wrapper {
+      overflow: hidden;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+    }
+    .cat-marquee-track {
+      display: flex; gap: 1.5rem;
+      width: max-content;
+      will-change: transform;
+    }
+    .marquee-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 20; width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(19,20,21,0.72); border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: #fff;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .marquee-arrow:hover { background: var(--copper); border-color: transparent; }
+    .marquee-arrow-prev { left: calc(-50vw + 50% + 1rem); }
+    .marquee-arrow-next { right: calc(50% - 50vw + 1rem); }
+    .cat-card {
+      flex-shrink: 0; width: 360px;
+      background: #fff;
+      border-radius: 3px; overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      display: flex; flex-direction: column;
+    }
+    .cat-card:hover {
+      box-shadow: 0 18px 52px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+    }
+    .cat-card-img {
+      width: 100%; height: 300px;
+      object-fit: cover; display: block;
+      background: #e6e8eb;
+    }
+    .cat-card-body {
+      padding: 1.5rem 1.5rem 1.75rem;
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .cat-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: #111; margin-bottom: 0.55rem; line-height: 1.25;
+    }
+    .cat-card-desc {
+      font-size: 0.8125rem; color: #666;
+      line-height: 1.7; margin-bottom: 1.375rem; flex: 1;
+    }
+    .cat-card-btn {
+      display: block; background: #111; color: #fff;
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.8rem 1.25rem; text-align: center;
+      text-decoration: none; transition: background 0.2s ease;
+    }
+    .cat-card-btn:hover { background: #2a2a2a; color: #fff; }
+
+    /* ── Contact dropdown ─────────────────────────────── */
+    .contact-drop-item:hover { background: rgba(255,255,255,0.04); }
+    #contact-nav-btn.open svg { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ════════════════════════════ -->
+<header class="nav-blur fixed top-0 left-0 right-0 z-50" id="site-nav">
+  <div class="max-w-site mx-auto px-site">
+    <nav class="flex items-center justify-between h-16">
+
+      <a href="index.html" class="flex items-center gap-3" aria-label="CW Metals Inc. Homepage">
+        <div class="w-0.5 h-7 rounded-full" style="background:linear-gradient(to bottom,var(--copper),rgba(184,115,51,0.2));"></div>
+        <div>
+          <div class="font-display font-bold text-lg leading-tight tracking-tight" style="color:var(--ink-on-dark);">CW Metals</div>
+          <div style="font-size:0.5rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel);">Inc. — New York City</div>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8" style="margin-left:3rem;">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="awards.html" class="nav-link">Awards</a>
+        <div class="relative" id="contact-nav-wrapper">
+          <button class="nav-link" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:5px;" id="contact-nav-btn" aria-expanded="false" aria-haspopup="true">
+            Contact
+            <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transition:transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="contact-dropdown" style="display:none;position:absolute;right:0;top:calc(100% + 10px);min-width:215px;background:#13161a;border:1px solid rgba(168,178,188,0.1);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:60;overflow:hidden;">
+            <a href="tel:9174167906" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--steel);font-size:0.8125rem;font-weight:500;text-decoration:none;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+              917-416-7906
+            </a>
+            <div style="height:1px;background:rgba(168,178,188,0.07);margin:0 12px;"></div>
+            <a href="mailto:estimating@cwmetalsinc.com" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--steel);font-size:0.8125rem;font-weight:500;text-decoration:none;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              estimating@cwmetalsinc.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="tel:9174167906" class="hidden md:flex items-center gap-2" style="color:var(--steel);font-size:0.8125rem;font-weight:500;text-decoration:none;">
+          <svg class="w-3.5 h-3.5" style="color:var(--copper);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          917-416-7906
+        </a>
+        <a href="#quote" class="btn-copper" style="padding:9px 22px;font-size:0.78rem;">Get Quote</a>
+        <button class="lg:hidden flex flex-col gap-1.5 p-1" aria-label="Open menu" id="mobile-menu-btn">
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-3.5 h-0.5 block" style="background:var(--copper);"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer lg:hidden" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products &amp; Capabilities</a>
+    <a href="portfolio.html">Projects &amp; Portfolio</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:9174167906" style="color:var(--copper);">917-416-7906</a>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════ HERO ════════════════════════════ -->
+<section class="hero-section" aria-label="Homepage hero">
+  <div class="hero-slides" aria-hidden="true">
+    <img class="hero-slide active" src="assets/img/hero/hero-metal-entrance.jpg" alt="">
+    <img class="hero-slide" src="assets/img/gallery/gallery-img0952.jpg" alt="">
+    <img class="hero-slide" src="assets/img/gallery/gallery-img0959.jpg" alt="">
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      Est. 1985 &nbsp;·&nbsp; Long Island City
+    </p>
+    <h1 class="hero-title">Architectural Sheet Metal for New York.</h1>
+    <p class="hero-sub">Fabrication and installation for architects, general contractors, and building owners across the five boroughs. Fast turnaround on standard profiles.</p>
+    <div class="hero-ctas">
+      <a href="#quote" class="btn-copper" style="padding:16px 36px;font-size:0.8125rem;">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Request Estimate
+      </a>
+      <a href="portfolio.html" class="btn-ghost" style="padding:16px 36px;font-size:0.8125rem;">
+        View Portfolio
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ ARCHITECTURAL SHEET METAL (70%) ══════════ -->
+<section style="background:var(--surface);border-top:1px solid rgba(0,0,0,0.06);" class="py-24 lg:py-32">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:grid;gap:4rem;align-items:start;" class="lg:grid-cols-[1fr_420px]">
+
+      <!-- Left: heading, intro, product grid, CTA -->
+      <div>
+        <p class="section-label" style="margin-bottom:0.875rem;">Primary Division</p>
+        <h2 class="font-display" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:1.5rem;">
+          Architectural<br/>Sheet Metal
+        </h2>
+
+        <p style="font-size:1rem;line-height:1.75;color:var(--ink-mid);max-width:52ch;margin-bottom:0.875rem;">
+          We fabricate the full range of architectural sheet metal profiles for new construction and restoration — from parapet caps to full envelope systems. Shop drawings, custom profiles, and fast lead times on standard stock.
+        </p>
+        <p style="font-size:1rem;line-height:1.75;color:var(--ink-soft);max-width:52ch;margin-bottom:2.5rem;">
+          Work with your architect's specifications or send us a field measurement and we'll draft from scratch. Copper, galvanized steel, stainless, zinc, and lead-coated copper in stock.
+        </p>
+
+        <a href="#quote" class="btn-copper" style="padding:14px 32px;margin-top:1rem;">
+          Get a Fabrication Estimate
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Right: photo -->
+      <div style="border-radius:4px;overflow:hidden;" class="hidden lg:block">
+        <img
+          src="assets/img/gallery/gallery-img0952.jpg"
+          alt="Architectural sheet metal installation — New York City"
+          style="width:100%;height:520px;object-fit:cover;display:block;"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+
+    <!-- Category carousel marquee -->
+    <div style="margin-top:3.5rem;">
+      <p class="section-label" style="margin-bottom:1.25rem;">Product Range</p>
+      <div style="position:relative;">
+        <button class="marquee-arrow marquee-arrow-prev" id="marquee-prev" aria-label="Previous products">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="marquee-arrow marquee-arrow-next" id="marquee-next" aria-label="Next products">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      <div class="cat-marquee-wrapper">
+        <div class="cat-marquee-track" id="cat-marquee-track">
+
+          <!-- SET 1 -->
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Copings &amp; Coping Caps</div>
+              <p class="cat-card-desc">Fabricated to profile from copper, galvanized, stainless, or zinc. Custom lengths and end conditions with shop drawings included.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Parapet Caps</div>
+              <p class="cat-card-desc">Single-piece and segmented parapet caps for new construction and restoration in all standard metals and custom profiles.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Flashings &amp; Step Flashings</div>
+              <p class="cat-card-desc">Through-wall, counter, base, and step flashings cut and formed to your architect's specifications in any metal.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Column Covers</div>
+              <p class="cat-card-desc">Welded and seamed column covers for round, square, and custom profiles in copper, aluminum, and stainless steel.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Gutters &amp; Leaders</div>
+              <p class="cat-card-desc">Half-round, ogee, box, and custom gutter profiles. Copper leaders, standpipes, and conductor heads fabricated in-house.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Cornices &amp; Profiles</div>
+              <p class="cat-card-desc">Modular cornice sections and decorative profiles reproduced from original drawings or field measurement.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Window Surrounds</div>
+              <p class="cat-card-desc">Sheet metal window trim, sills, lintels, and surrounds in galvanized, stainless, or copper to architect's detail.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Skylights &amp; Monitors</div>
+              <p class="cat-card-desc">Custom skylight curbs, monitors, and metal glazing frames fabricated to drawing or field measurement.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+
+          <!-- SET 2 — duplicate for seamless loop -->
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Copings &amp; Coping Caps</div>
+              <p class="cat-card-desc">Fabricated to profile from copper, galvanized, stainless, or zinc. Custom lengths and end conditions with shop drawings included.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Parapet Caps</div>
+              <p class="cat-card-desc">Single-piece and segmented parapet caps for new construction and restoration in all standard metals and custom profiles.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Flashings &amp; Step Flashings</div>
+              <p class="cat-card-desc">Through-wall, counter, base, and step flashings cut and formed to your architect's specifications in any metal.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Column Covers</div>
+              <p class="cat-card-desc">Welded and seamed column covers for round, square, and custom profiles in copper, aluminum, and stainless steel.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Gutters &amp; Leaders</div>
+              <p class="cat-card-desc">Half-round, ogee, box, and custom gutter profiles. Copper leaders, standpipes, and conductor heads fabricated in-house.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Cornices &amp; Profiles</div>
+              <p class="cat-card-desc">Modular cornice sections and decorative profiles reproduced from original drawings or field measurement.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Window Surrounds</div>
+              <p class="cat-card-desc">Sheet metal window trim, sills, lintels, and surrounds in galvanized, stainless, or copper to architect's detail.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+          <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
+            <div class="cat-card-img"></div>
+            <div class="cat-card-body">
+              <div class="cat-card-title">Skylights &amp; Monitors</div>
+              <p class="cat-card-desc">Custom skylight curbs, monitors, and metal glazing frames fabricated to drawing or field measurement.</p>
+              <span class="cat-card-btn">Product Range</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      </div><!-- end position:relative marquee wrapper -->
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════ THREE SPECIALTY SERVICES ════════════════ -->
+<section style="background:#2D3B44;border-top:1px solid rgba(255,255,255,0.06);" class="py-24 lg:py-28">
+  <div class="max-w-site mx-auto px-site">
+
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:2.75rem;">
+      <div>
+        <p class="section-label" style="margin-bottom:0.625rem;">Specialty Divisions</p>
+        <h2 class="font-display" style="font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;color:#F0EDE8;line-height:1.2;">
+          Additional Capabilities
+        </h2>
+      </div>
+      <a href="products.html" style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--copper);text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+        Full Capabilities
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="services-grid">
+      <!-- Ornamental Metal Stamping -->
+      <a href="products.html#ornamental" class="hcard" style="height:400px;" aria-label="Ornamental Metal Stamping">
+        <img class="hcard-img" src="assets/img/services/service-fabrication.jpg" alt="Ornamental metal stamping — historic profile reproduction" style="height:100%;" loading="lazy"/>
+        <div class="hcard-overlay"></div>
+        <div class="hcard-base">
+          <span class="hcard-label">Division 02</span>
+          <span class="hcard-name">Ornamental Metal Stamping</span>
+          <p class="hcard-desc">Historic profiles, rosettes, cartouches, and cornices reproduced from photographs when no original survives.</p>
+          <span class="hcard-cta">View Capabilities <svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Precision Laser Cutting -->
+      <a href="products.html#laser" class="hcard" style="height:400px;" aria-label="Precision Laser Cutting">
+        <img class="hcard-img" src="assets/img/services/service-laser.jpg" alt="CNC fiber laser cutting — decorative grille and panel" style="height:100%;" loading="lazy"/>
+        <div class="hcard-overlay"></div>
+        <div class="hcard-base">
+          <span class="hcard-label">Division 03</span>
+          <span class="hcard-name">Precision Laser Cutting</span>
+          <p class="hcard-desc">CNC fiber laser for grilles, screens, decorative panels, and structural components in steel, stainless, aluminum, and copper.</p>
+          <span class="hcard-cta">View Capabilities <svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Field Installation -->
+      <a href="products.html#installation" class="hcard" style="height:400px;" aria-label="Field Installation">
+        <img class="hcard-img" src="assets/img/gallery/gallery-img0959.jpg" alt="Field installation of architectural metalwork" style="height:100%;" loading="lazy"/>
+        <div class="hcard-overlay"></div>
+        <div class="hcard-base">
+          <span class="hcard-label">Division 04</span>
+          <span class="hcard-name">Field Installation</span>
+          <p class="hcard-desc">Fabrication and installation under one contract. Single-source responsibility from shop drawing through final inspection.</p>
+          <span class="hcard-cta">View Capabilities <svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════ PORTFOLIO PREVIEW ═══════════════════════ -->
+<section style="background:var(--surface-dark);border-top:1px solid rgba(255,255,255,0.03);" class="py-24 lg:py-28">
+  <div class="max-w-site mx-auto px-site">
+
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:2.75rem;">
+      <div>
+        <p class="section-label" style="margin-bottom:0.5rem;">Selected Work</p>
+        <h2 class="font-display" style="font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;color:var(--ink-on-dark);line-height:1.2;">
+          Projects &amp; Portfolio
+        </h2>
+      </div>
+      <a href="portfolio.html" style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#D4A057;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+        All Projects
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        <img src="assets/img/gallery/gallery-sullivan.jpg" alt="Sullivan Street, SoHo" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;"/>
+        <img src="assets/img/gallery/gallery-img7112.jpg" alt="Historic New York City building" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2rem;padding-top:3rem;">
+        <img src="assets/img/gallery/gallery-01.jpg" alt="Ornamental stamped profiles" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;"/>
+        <img src="assets/img/gallery/gallery-img9314.jpg" alt="Historic cornice detail" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;"/>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:3rem;">
+      <a href="portfolio.html" class="btn-outline">View All Projects &amp; Portfolio</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ GET A QUOTE ══════════════════════════ -->
+<section id="quote" style="background:var(--surface);border-top:1px solid rgba(0,0,0,0.06);" class="py-24 lg:py-28">
+  <div class="max-w-site mx-auto px-site">
+    <div class="text-center" style="margin-bottom:3rem;">
+      <p class="section-label" style="margin-bottom:0.75rem;">Estimating Portal</p>
+      <h2 class="font-display" style="font-size:clamp(1.75rem,3.5vw,2.4rem);font-weight:700;color:var(--ink);margin-bottom:1rem;line-height:1.15;">
+        Get a Quote
+      </h2>
+      <p style="font-size:1rem;font-weight:300;color:var(--ink-mid);max-width:440px;margin:0 auto;line-height:1.7;">
+        Send us your drawings and we will respond within 24 business hours.
+      </p>
+    </div>
+
+    <div style="display:grid;gap:2.5rem;align-items:start;" class="lg:grid-cols-[260px_1fr_340px]">
+
+      <!-- Left: Contact info panel -->
+      <div style="background:var(--surface-dark);border-radius:8px;padding:2rem 1.75rem;">
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:1.5rem;">Contact Us</p>
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+          <a href="tel:9174167906" style="display:flex;align-items:center;gap:0.875rem;color:var(--ink-on-dark);font-size:0.9375rem;font-weight:500;text-decoration:none;">
+            <span style="width:36px;height:36px;border-radius:50%;background:rgba(184,115,51,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" fill="none" stroke="var(--copper)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+            </span>
+            917-416-7906
+          </a>
+          <a href="mailto:estimating@cwmetalsinc.com" style="display:flex;align-items:center;gap:0.875rem;color:var(--ink-on-dark);font-size:0.875rem;font-weight:500;text-decoration:none;word-break:break-all;">
+            <span style="width:36px;height:36px;border-radius:50%;background:rgba(184,115,51,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" fill="none" stroke="var(--copper)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </span>
+            estimating@cwmetalsinc.com
+          </a>
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;color:var(--steel);font-size:0.875rem;line-height:1.7;">
+            <span style="width:36px;height:36px;border-radius:50%;background:rgba(184,115,51,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="15" height="15" fill="none" stroke="var(--copper)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </span>
+            <span>39-13 24th Street<br>Long Island City, NY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <form id="quote-form" class="rfq-panel" style="padding:2rem 2.25rem;" novalidate>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:1.25rem;">
+          <div><label class="form-label" for="q-name">Full Name <span style="color:var(--copper);">*</span></label><input class="form-input" type="text" id="q-name" name="name" placeholder="Jane Smith" required autocomplete="name"/></div>
+          <div><label class="form-label" for="q-company">Company Name <span style="color:var(--copper);">*</span></label><input class="form-input" type="text" id="q-company" name="company" placeholder="Acme Construction LLC" required autocomplete="organization"/></div>
+          <div><label class="form-label" for="q-email">Email <span style="color:var(--copper);">*</span></label><input class="form-input" type="email" id="q-email" name="email" placeholder="jane@yourfirm.com" required autocomplete="email"/></div>
+          <div><label class="form-label" for="q-phone">Phone</label><input class="form-input" type="tel" id="q-phone" name="phone" placeholder="(212) 555-0100" autocomplete="tel"/></div>
+        </div>
+        <div style="margin-bottom:1.75rem;">
+          <label class="form-label" style="margin-bottom:0.75rem;">Upload Drawings <span style="color:var(--copper);">*</span></label>
+          <div class="dropzone relative" id="q-dropzone" role="button" aria-label="Upload files">
+            <input type="file" id="q-files" name="files" multiple accept=".pdf,.dwg,.dxf,.stp,.step,.jpg,.jpeg,.png,.zip"/>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;pointer-events:none;">
+              <svg class="w-10 h-10" style="color:var(--steel);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+              <div style="text-align:center;"><p style="color:var(--ink-on-dark);font-size:0.875rem;font-weight:500;margin-bottom:2px;">Drag &amp; drop files here</p><p style="color:var(--steel);font-size:0.75rem;">or <span style="color:#D4A057;text-decoration:underline;">browse to upload</span></p></div>
+              <p style="color:var(--steel);font-size:0.75rem;">PDF, DWG, DXF, STP, JPG, PNG, ZIP &middot; Max 250 MB per file</p>
+            </div>
+            <div id="q-file-list" class="hidden" style="margin-top:1rem;display:flex;flex-direction:column;gap:6px;pointer-events:none;"></div>
+          </div>
+        </div>
+        <button type="submit" class="btn-copper" style="width:100%;justify-content:center;padding:16px;font-size:0.875rem;">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Submit Quote Request
+        </button>
+      </form>
+
+      <!-- Right: Map -->
+      <div style="border-radius:8px;overflow:hidden;position:sticky;top:2rem;">
+        <a href="https://maps.google.com/?q=39-13+24th+Street,+Long+Island+City,+NY+11101" target="_blank" rel="noopener noreferrer" style="display:block;position:relative;text-decoration:none;">
+          <iframe
+            src="https://maps.google.com/maps?q=39-13+24th+Street,+Long+Island+City,+NY+11101&output=embed&hl=en"
+            width="100%" height="320"
+            style="border:0;display:block;filter:grayscale(20%) contrast(1.05);"
+            allowfullscreen loading="lazy"
+            title="CW Metals shop location">
+          </iframe>
+        </a>
+        <div style="background:var(--surface-dark);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <p style="font-size:0.75rem;font-weight:600;color:var(--ink-on-dark);margin-bottom:2px;">CW Metals Inc.</p>
+            <p style="font-size:0.75rem;color:var(--steel);line-height:1.5;">39-13 24th Street<br>Long Island City, NY 11101</p>
+          </div>
+          <a href="https://maps.google.com/?q=39-13+24th+Street,+Long+Island+City,+NY+11101" target="_blank" rel="noopener noreferrer"
+             style="font-size:0.6875rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--copper);text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;">
+            Open in Maps
+            <svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="site-footer" style="padding:3.5rem 0 2rem;">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:grid;gap:2.5rem;margin-bottom:2.5rem;" class="md:grid-cols-3 lg:grid-cols-4">
+      <div>
+        <div class="footer-wordmark" style="margin-bottom:0.375rem;">CW Metals Inc.</div>
+        <div style="font-size:0.7rem;color:var(--steel);margin-bottom:1rem;">Architectural Sheet Metal &amp; Ornamental Fabrication · New York City</div>
+        <p style="font-size:0.75rem;color:var(--steel);line-height:1.65;">39-13 24th Street<br>Long Island City, NY</p>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Services</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="products.html#sheetmetal" class="footer-link">Architectural Sheet Metal</a>
+          <a href="products.html#ornamental" class="footer-link">Ornamental Metal Stamping</a>
+          <a href="products.html#laser" class="footer-link">Precision Laser Cutting</a>
+          <a href="products.html#installation" class="footer-link">Field Installation</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Company</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="portfolio.html" class="footer-link">Projects &amp; Portfolio</a>
+          <a href="areas.html" class="footer-link">Areas We Serve</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="awards.html" class="footer-link">Awards &amp; Recognition</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="mailto:estimating@cwmetalsinc.com" class="footer-link">estimating@cwmetalsinc.com</a>
+          <a href="tel:9174167906" class="footer-link">917-416-7906</a>
+          <p style="font-size:0.75rem;color:var(--steel);"><span class="verify">[[VERIFY: shop hours]]</span></p>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(168,178,188,0.06);">
+      <span id="footer-year" style="font-size:0.75rem;color:var(--steel);">© 2025 CW Metals Inc. All rights reserved.</span>
+      <span style="font-size:0.7rem;color:var(--steel);">LPC &amp; DOB Compliant Fabrication · New York City</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  'use strict';
+
+  // Footer year
+  const yr = document.getElementById('footer-year');
+  if (yr) yr.textContent = '© ' + new Date().getFullYear() + ' CW Metals Inc. All rights reserved.';
+
+  // Nav scroll class
+  const nav = document.getElementById('site-nav');
+  if (nav) window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Hero carousel — 3-image crossfade every 4 s
+  (function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (!slides.length) return;
+    let cur = 0;
+    setInterval(function() {
+      slides[cur].classList.remove('active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('active');
+    }, 4000);
+  })();
+
+  // Category marquee — JS auto-scroll + manual arrows
+  (function() {
+    const track = document.getElementById('cat-marquee-track');
+    if (!track) return;
+    const GAP = 24;
+    const CARD_W = 360 + GAP;
+    const HALF = 8 * CARD_W;
+    const SPEED = 1.05; // px/frame at 60fps ≈ 63px/s (slightly faster than before)
+    let pos = 0;
+    let paused = false;
+
+    function tick() {
+      if (!paused) {
+        pos += SPEED;
+        if (pos >= HALF) pos -= HALF;
+        track.style.transform = 'translateX(' + (-pos) + 'px)';
+      }
+      requestAnimationFrame(tick);
+    }
+
+    track.addEventListener('mouseenter', function() { paused = true; });
+    track.addEventListener('mouseleave', function() { paused = false; });
+
+    var prevBtn = document.getElementById('marquee-prev');
+    var nextBtn = document.getElementById('marquee-next');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        pos = ((pos - CARD_W) % HALF + HALF) % HALF;
+        track.style.transform = 'translateX(' + (-pos) + 'px)';
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        pos = (pos + CARD_W) % HALF;
+        track.style.transform = 'translateX(' + (-pos) + 'px)';
+      });
+    }
+
+    requestAnimationFrame(tick);
+  })();
+
+  // Mobile menu drawer
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
+    });
+    mobileDrawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+    });
+  }
+
+  // Contact dropdown
+  (function() {
+    const btn = document.getElementById('contact-nav-btn');
+    const dd  = document.getElementById('contact-dropdown');
+    if (!btn || !dd) return;
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = dd.style.display !== 'none';
+      dd.style.display = open ? 'none' : 'block';
+      btn.classList.toggle('open', !open);
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+    document.addEventListener('click', function() {
+      dd.style.display = 'none';
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  })();
+
+  // hcard / gcard touch toggle
+  document.querySelectorAll('.hcard, .gcard').forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (!this.classList.contains('is-active')) {
+        e.preventDefault();
+        document.querySelectorAll('.hcard.is-active, .gcard.is-active').forEach(c => c.classList.remove('is-active'));
+        this.classList.add('is-active');
+      }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.hcard') && !e.target.closest('.gcard')) {
+      document.querySelectorAll('.hcard.is-active, .gcard.is-active').forEach(c => c.classList.remove('is-active'));
+    }
+  });
+
+  // Dropzone
+  const dz = document.getElementById('q-dropzone');
+  const fi = document.getElementById('q-files');
+  const fl = document.getElementById('q-file-list');
+  if (dz && fi) {
+    ['dragenter','dragover'].forEach(ev => dz.addEventListener(ev, e => { e.preventDefault(); dz.classList.add('drag-over'); }));
+    ['dragleave','drop'].forEach(ev => dz.addEventListener(ev, e => { e.preventDefault(); dz.classList.remove('drag-over'); }));
+    dz.addEventListener('drop', e => { fi.files = e.dataTransfer.files; renderFiles(e.dataTransfer.files); });
+    fi.addEventListener('change', () => renderFiles(fi.files));
+  }
+  function formatBytes(b) { return b < 1024 ? b + ' B' : b < 1048576 ? (b/1024).toFixed(1) + ' KB' : (b/1048576).toFixed(1) + ' MB'; }
+  function escHtml(s) { const d = document.createElement('div'); d.appendChild(document.createTextNode(s)); return d.innerHTML; }
+  function renderFiles(files) {
+    if (!fl || !files || !files.length) return;
+    fl.innerHTML = ''; fl.classList.remove('hidden');
+    Array.from(files).forEach(f => {
+      const el = document.createElement('div');
+      el.style.cssText = 'display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:3px;font-size:0.75rem;background:rgba(184,115,51,0.06);border:1px solid rgba(184,115,51,0.12);';
+      el.innerHTML = '<svg width=12 height=12 style="color:var(--copper);flex-shrink:0" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span style="color:var(--ink-on-dark);font-weight:500">' + escHtml(f.name) + '</span><span style="color:var(--steel);margin-left:auto">' + formatBytes(f.size) + '</span>';
+      fl.appendChild(el);
+    });
+  }
+
+  // Form validation
+  const form = document.getElementById('quote-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let ok = true;
+      this.querySelectorAll('[required]').forEach(f => {
+        f.style.borderColor = '';
+        f.style.boxShadow = '';
+        if (!f.value.trim()) {
+          f.style.borderColor = 'rgba(239,68,68,0.6)';
+          f.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
+          ok = false;
+        }
+      });
+      if (ok) {
+        const btn = this.querySelector('button[type=submit]');
+        btn.textContent = 'Submitted — we will be in touch within 24h';
+        btn.style.background = 'linear-gradient(135deg,#2d5a1b,#3a7d24)';
+        btn.disabled = true;
+      }
+    });
+    form.querySelectorAll('[required]').forEach(f => f.addEventListener('input', () => {
+      f.style.borderColor = '';
+      f.style.boxShadow = '';
+    }));
+  }
+})();
+</script>
+
+</body>
+</html>

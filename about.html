@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — CW Metals Inc.</title>
+  <meta name="description" content="CW Metals Inc. is a New York City architectural sheet metal fabricator. Eight preservation awards. Founded by Cezary Witek. LPC and DOB compliant work across all five boroughs.">
+  <link rel="canonical" href="https://cwmetalsinc.com/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="site.css" />
+
+  <style>
+    /* Award table */
+    .award-table { width:100%; border-collapse:separate; border-spacing:0; font-size:0.875rem; }
+    .award-table th {
+      font-size:0.6rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+      color:rgba(200,136,58,0.7); padding:10px 16px 10px 0; text-align:left;
+      border-bottom:1px solid rgba(200,136,58,0.12);
+    }
+    .award-table td {
+      padding:13px 16px 13px 0; color:var(--text-steel);
+      border-bottom:1px solid rgba(200,136,58,0.06);
+      vertical-align:top; line-height:1.5;
+    }
+    .award-table tr:last-child td { border-bottom:none; }
+    .award-year { color:var(--copper); font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .award-org { font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; }
+
+    /* Credential grid */
+    .cred-grid { display:grid; gap:1rem; }
+    @media (min-width:640px) { .cred-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (min-width:1024px) { .cred-grid { grid-template-columns:repeat(3,1fr); } }
+
+    .cred-item {
+      background: rgba(200,136,58,0.04);
+      border: 1px solid rgba(200,136,58,0.1);
+      border-radius:4px; padding:1.25rem 1.5rem;
+    }
+    .contact-drop-item:hover { background:rgba(255,255,255,0.04); }
+    #contact-nav-btn.open svg { transform:rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ════════════════════════════════════════════════════ -->
+<header class="nav-blur fixed top-0 left-0 right-0 z-50" id="site-nav">
+  <div class="max-w-site mx-auto px-site">
+    <nav class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3" aria-label="CW Metals Inc. Homepage">
+        <div class="w-0.5 h-7 rounded-full" style="background:linear-gradient(to bottom,var(--copper),rgba(200,136,58,0.2));"></div>
+        <div>
+          <div class="font-display font-bold text-lg leading-tight tracking-tight" style="color:var(--ink-on-dark);">CW Metals</div>
+          <div style="font-size:0.5rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel);">Inc. — New York City</div>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-8" style="margin-left:3rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="awards.html" class="nav-link">Awards</a>
+        <div class="relative" id="contact-nav-wrapper">
+          <button class="nav-link" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:5px;" id="contact-nav-btn" aria-expanded="false" aria-haspopup="true">
+            Contact
+            <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transition:transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="contact-dropdown" style="display:none;position:absolute;right:0;top:calc(100% + 10px);min-width:215px;background:#13161a;border:1px solid rgba(168,178,188,0.1);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:60;overflow:hidden;">
+            <a href="tel:9174167906" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--text-steel);font-size:0.8125rem;font-weight:500;text-decoration:none;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>917-416-7906</a>
+            <div style="height:1px;background:rgba(168,178,188,0.07);margin:0 12px;"></div>
+            <a href="mailto:estimating@cwmetalsinc.com" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--text-steel);font-size:0.8125rem;font-weight:500;text-decoration:none;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>estimating@cwmetalsinc.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:9174167906" class="hidden md:flex items-center gap-2" style="color:var(--steel);font-size:0.8125rem;font-weight:500;text-decoration:none;">
+          <svg class="w-3.5 h-3.5" style="color:var(--copper);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          917-416-7906
+        </a>
+        <a href="contact.html" class="btn-copper" style="padding:9px 22px;font-size:0.78rem;">Get Quote</a>
+        <button class="lg:hidden flex flex-col gap-1.5 p-1" aria-label="Open menu" id="mobile-menu-btn">
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-3.5 h-0.5 block" style="background:var(--copper);"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-drawer lg:hidden" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products &amp; Capabilities</a>
+    <a href="portfolio.html">Projects &amp; Portfolio</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:9174167906" style="color:var(--copper);">917-416-7906</a>
+  </div>
+</header>
+
+
+<!-- ═══ PAGE HERO ════════════════════════════════════════════ -->
+<div class="page-hero">
+  <div class="max-w-site mx-auto px-site">
+    <div class="page-hero-eyebrow">
+      <span class="page-hero-line"></span>
+      About
+    </div>
+    <h1 class="font-display" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:800;color:var(--text-parchment);line-height:1.1;">
+      CW Metals Inc.
+    </h1>
+    <p style="font-size:1rem;font-weight:300;color:var(--text-steel);line-height:1.75;max-width:500px;margin-top:1rem;">
+      Architectural sheet metal fabrication and ornamental metalwork. Eight preservation awards. Based in New York City.
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══ LEADERSHIP / BIO ═════════════════════════════════════ -->
+<section style="background:var(--bg-limestone);" class="on-light py-16 lg:py-20">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:grid;gap:3rem;align-items:start;" class="lg:grid-cols-2">
+      <div>
+        <p class="section-label" style="color:#8B5A1A;margin-bottom:0.75rem;">Founder</p>
+        <h2 class="font-display" style="font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--text-ink);margin-bottom:1.5rem;">
+          Cezary Witek
+        </h2>
+        <div class="content-needed" style="border-radius:4px;">
+          <strong>[[CONTENT NEEDED: Cezary Witek biography]]</strong><br/>
+          <span style="font-size:0.75rem;">Please supply: years in the trade, background and training, what brought you to architectural metalwork, what makes CW Metals' approach distinctive. One paragraph, written in third person. Approximate length: 120–180 words.</span>
+        </div>
+        <div class="content-needed" style="border-radius:4px;margin-top:1rem;">
+          <strong>[[VERIFY: founding year]]</strong><br/>
+          <span style="font-size:0.75rem;">What year was CW Metals Inc. established? (Previously listed as 1990 — please confirm.)</span>
+        </div>
+      </div>
+      <div>
+        <div class="content-needed" style="border-radius:4px;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <strong>[[CONTENT NEEDED: Shop Photograph]]</strong><br/>
+          <span style="font-size:0.75rem;display:block;margin-top:0.5rem;">Interior or exterior photo of the shop facility. Alternatively: a photo of Cezary at work or a detail shot of the press equipment.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ AWARDS ════════════════════════════════════════════════ -->
+<section id="awards" style="background:var(--bg-patina);border-top:1px solid rgba(200,136,58,0.1);" class="py-16 lg:py-20">
+  <div class="max-w-site mx-auto px-site">
+
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem;">
+      <div>
+        <p class="section-label" style="margin-bottom:0.75rem;">Recognition</p>
+        <h2 class="font-display" style="font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--text-parchment);line-height:1.2;">
+          Eight Preservation Awards
+        </h2>
+      </div>
+      <div style="display:flex;gap:2rem;">
+        <div style="text-align:center;">
+          <div class="font-display font-bold" style="font-size:2.75rem;line-height:1;background:linear-gradient(135deg,var(--copper),var(--copper-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">6×</div>
+          <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-steel-dim);margin-top:4px;">Lucy G. Moses<br/>Preservation Award</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="font-display font-bold" style="font-size:2.75rem;line-height:1;color:var(--text-parchment);">2×</div>
+          <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-steel-dim);margin-top:4px;">Preservation League<br/>Excellence Award</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Award certificate photograph -->
+    <div style="border-radius:6px;overflow:hidden;border:1px solid rgba(200,136,58,0.18);margin-bottom:2rem;">
+      <img
+        src="assets/awards/preservation-league-2017.jpg"
+        alt="Preservation League of New York State — Excellence in Historic Preservation Award 2017, A. Philip Randolph Houses Phase One, Cezary Witek / CW Metals Inc."
+        style="width:100%;display:block;"
+      />
+    </div>
+
+    <!-- Award table -->
+    <div style="overflow-x:auto;">
+      <table class="award-table" aria-label="Award history">
+        <thead>
+          <tr>
+            <th style="width:5rem;">Year</th>
+            <th>Award</th>
+            <th>Project</th>
+            <th>Architect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="award-year">2017</td>
+            <td><span class="award-org">Preservation League of New York State</span><br/>Excellence in Historic Preservation</td>
+            <td>A. Philip Randolph Houses, Phase One — Harlem</td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">Preservation League of New York State</span><br/>Excellence in Historic Preservation</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">New York Landmarks Conservancy</span><br/>Lucy G. Moses Preservation Award</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">New York Landmarks Conservancy</span><br/>Lucy G. Moses Preservation Award</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">New York Landmarks Conservancy</span><br/>Lucy G. Moses Preservation Award</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">New York Landmarks Conservancy</span><br/>Lucy G. Moses Preservation Award</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">New York Landmarks Conservancy</span><br/>Lucy G. Moses Preservation Award</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+          <tr>
+            <td class="award-year"><span class="verify">[[VERIFY]]</span></td>
+            <td><span class="award-org">New York Landmarks Conservancy</span><br/>Lucy G. Moses Preservation Award</td>
+            <td><span class="verify">[[VERIFY: project name and location]]</span></td>
+            <td><span class="verify">[[VERIFY: architect]]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-steel-dim);margin-top:1.25rem;">
+      <span class="verify">[[CONTENT NEEDED: Cezary to supply all 8 award years, project names, and architects from award certificates or program books]]</span>
+    </p>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(200,136,58,0.1);">
+      <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-steel-dim);">Recognized By</span>
+      <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-steel);">New York Landmarks Conservancy</span>
+      <span style="color:var(--copper);font-size:0.5rem;">●</span>
+      <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-steel);">Preservation League of New York State</span>
+      <span style="color:var(--copper);font-size:0.5rem;">●</span>
+      <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-steel);">NYC Landmarks Preservation Commission</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CREDENTIALS ══════════════════════════════════════════ -->
+<section style="background:var(--bg-limestone);border-top:1px solid rgba(160,103,47,0.1);" class="on-light py-16 lg:py-20">
+  <div class="max-w-site mx-auto px-site">
+    <p class="section-label" style="color:#8B5A1A;margin-bottom:0.75rem;">Trade Credentials</p>
+    <h2 class="font-display" style="font-size:clamp(1.4rem,2.5vw,1.875rem);font-weight:700;color:var(--text-ink);margin-bottom:2rem;">Compliance &amp; Credentials</h2>
+    <div class="cred-grid">
+      <div class="cred-item">
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#8B5A1A;margin-bottom:0.5rem;">Entity</p>
+        <p style="font-size:0.9375rem;font-weight:600;color:var(--text-ink);margin-bottom:0.375rem;">CW Metals Inc.</p>
+        <p style="font-size:0.8rem;color:var(--text-ink-soft);">
+          <span class="verify">[[VERIFY: full legal entity name and registered address]]</span><br/>
+          Established <span class="verify">[[VERIFY: year]]</span>
+        </p>
+      </div>
+      <div class="cred-item">
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#8B5A1A;margin-bottom:0.5rem;">Insurance</p>
+        <p style="font-size:0.8rem;color:var(--text-ink-soft);line-height:1.65;">
+          General Liability and Workers' Compensation maintained.<br/>
+          COI available on request.<br/>
+          <span class="verify">[[VERIFY: GL/WC limits, bonding capacity, EMR]]</span>
+        </p>
+      </div>
+      <div class="cred-item">
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#8B5A1A;margin-bottom:0.5rem;">Regulatory</p>
+        <p style="font-size:0.8rem;color:var(--text-ink-soft);line-height:1.65;">
+          LPC &amp; DOB compliant work.<br/>
+          W-9 and vendor documentation on request.<br/>
+          <span class="verify">[[VERIFY: union affiliation, MWBE/SBE/DBE status]]</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="site-footer" style="padding:3.5rem 0 2rem;">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:grid;gap:2.5rem;margin-bottom:2.5rem;" class="md:grid-cols-3">
+      <div>
+        <div class="footer-wordmark" style="margin-bottom:0.375rem;">CW Metals Inc.</div>
+        <div style="font-size:0.7rem;color:var(--text-steel-dim);">Ornamental Metal Stamping &amp; Architectural Sheet Metal · New York City</div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Navigation</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="products.html" class="footer-link">Products &amp; Capabilities</a>
+          <a href="portfolio.html" class="footer-link">Projects &amp; Portfolio</a>
+          <a href="areas.html" class="footer-link">Areas We Serve</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="mailto:estimating@cwmetalsinc.com" class="footer-link">estimating@cwmetalsinc.com</a>
+          <a href="tel:9174167906" class="footer-link">917-416-7906</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;border-top:1px solid rgba(168,178,188,0.06);">
+      <span id="footer-year" style="font-size:0.75rem;color:var(--text-steel-dim);">© 2025 CW Metals Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const yr = document.getElementById('footer-year');
+  if(yr) yr.textContent = '© ' + new Date().getFullYear() + ' CW Metals Inc. All rights reserved.';
+  const nav = document.getElementById('site-nav');
+  if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('open'));
+    mobileDrawer.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileDrawer.classList.remove('open')));
+  }
+  (function(){ const btn=document.getElementById('contact-nav-btn'); const dd=document.getElementById('contact-dropdown'); if(!btn||!dd) return; btn.addEventListener('click',function(e){ e.stopPropagation(); const open=dd.style.display!=='none'; dd.style.display=open?'none':'block'; btn.classList.toggle('open',!open); btn.setAttribute('aria-expanded',String(!open)); }); document.addEventListener('click',function(){ dd.style.display='none'; btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }); })();
+})();
+</script>
+</body>
+</html>

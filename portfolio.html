@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects &amp; Portfolio — CW Metals Inc.</title>
+  <meta name="description" content="Landmark restoration, new construction, and ornamental metalwork projects across New York City's five boroughs. Twenty-two projects with architect and contractor credits.">
+  <link rel="canonical" href="https://cwmetalsinc.com/portfolio.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="site.css" />
+
+  <style>
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    @media (min-width: 768px)  { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1200px) { .portfolio-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .gcard[data-cat].hidden-card { display: none; }
+    .contact-drop-item:hover { background:rgba(255,255,255,0.04); }
+    #contact-nav-btn.open svg { transform:rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ════════════════════════════════════════════════════ -->
+<header class="nav-blur fixed top-0 left-0 right-0 z-50" id="site-nav">
+  <div class="max-w-site mx-auto px-site">
+    <nav class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3" aria-label="CW Metals Inc. Homepage">
+        <div class="w-0.5 h-7 rounded-full" style="background:linear-gradient(to bottom,var(--copper),rgba(200,136,58,0.2));"></div>
+        <div>
+          <div class="font-display font-bold text-lg leading-tight tracking-tight" style="color:var(--ink-on-dark);">CW Metals</div>
+          <div style="font-size:0.5rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel);">Inc. — New York City</div>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-8" style="margin-left:3rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="portfolio.html" class="nav-link active">Portfolio</a>
+        <a href="awards.html" class="nav-link">Awards</a>
+        <div class="relative" id="contact-nav-wrapper">
+          <button class="nav-link" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:5px;" id="contact-nav-btn" aria-expanded="false" aria-haspopup="true">
+            Contact
+            <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transition:transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="contact-dropdown" style="display:none;position:absolute;right:0;top:calc(100% + 10px);min-width:215px;background:#13161a;border:1px solid rgba(168,178,188,0.1);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:60;overflow:hidden;">
+            <a href="tel:9174167906" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--text-steel);font-size:0.8125rem;font-weight:500;text-decoration:none;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>917-416-7906</a>
+            <div style="height:1px;background:rgba(168,178,188,0.07);margin:0 12px;"></div>
+            <a href="mailto:estimating@cwmetalsinc.com" class="contact-drop-item" style="display:flex;align-items:center;gap:10px;padding:13px 16px;color:var(--text-steel);font-size:0.8125rem;font-weight:500;text-decoration:none;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--copper);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>estimating@cwmetalsinc.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:9174167906" class="hidden md:flex items-center gap-2" style="color:var(--steel);font-size:0.8125rem;font-weight:500;text-decoration:none;">
+          <svg class="w-3.5 h-3.5" style="color:var(--copper);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          917-416-7906
+        </a>
+        <a href="contact.html" class="btn-copper" style="padding:9px 22px;font-size:0.78rem;">Get Quote</a>
+        <button class="lg:hidden flex flex-col gap-1.5 p-1" aria-label="Open menu" id="mobile-menu-btn">
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-5 h-0.5 block" style="background:var(--steel);"></span>
+          <span class="w-3.5 h-0.5 block" style="background:var(--copper);"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-drawer lg:hidden" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products &amp; Capabilities</a>
+    <a href="portfolio.html">Projects &amp; Portfolio</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:9174167906" style="color:var(--copper);">917-416-7906</a>
+  </div>
+</header>
+
+
+<!-- ═══ PAGE HERO ════════════════════════════════════════════ -->
+<div class="page-hero">
+  <div class="max-w-site mx-auto px-site">
+    <div class="page-hero-eyebrow">
+      <span class="page-hero-line"></span>
+      Selected Work
+    </div>
+    <h1 class="font-display" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:800;color:var(--text-parchment);line-height:1.1;max-width:520px;">
+      Projects &amp; Portfolio
+    </h1>
+    <p style="font-size:1rem;font-weight:300;color:var(--text-steel);line-height:1.75;max-width:480px;margin-top:1rem;">
+      Landmark restoration, new construction, and ornamental metalwork across New York City. Every entry lists the architect, general contractor, and scope where we have it — because that's what makes a project record useful.
+    </p>
+    <p style="font-size:0.8rem;color:var(--text-steel-dim);margin-top:0.75rem;">
+      <span class="verify">[[CONTENT NEEDED: project names, credits, and scopes for all 22 images — see CONTENT-TODO.md]]</span>
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══ FILTER TABS ══════════════════════════════════════════ -->
+<div style="background:var(--bg-lead);border-bottom:1px solid rgba(168,178,188,0.06);position:sticky;top:64px;z-index:30;padding:0.875rem 0;">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;" role="group" aria-label="Filter projects by category">
+      <button class="filter-tab active" data-filter="all">All Projects</button>
+      <button class="filter-tab" data-filter="landmark">Landmark Restoration</button>
+      <button class="filter-tab" data-filter="stamping">Ornamental Stamping</button>
+      <button class="filter-tab" data-filter="sheetmetal">Sheet Metal</button>
+      <button class="filter-tab" data-filter="laser">Laser Cutting</button>
+      <button class="filter-tab" data-filter="new-construction">New Construction</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ PORTFOLIO GRID ═══════════════════════════════════════ -->
+<section style="background:var(--bg-lead);" class="py-12 lg:py-16">
+  <div class="max-w-site mx-auto px-site">
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <!-- Sullivan Street — only named project we have confirmed -->
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark stamping" aria-label="Sullivan Street, SoHo — ornamental metal stamping">
+        <img src="assets/img/gallery/gallery-sullivan.jpg" alt="Sullivan Street, SoHo — ornamental stamping reproduced from archival photography" loading="eager"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name">Sullivan Street — SoHo</p>
+          <p class="gcard-caption-meta">Ornamental stamping · Original profile from archival photography<br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <!-- Remaining 21 images — all awaiting project data from Cezary -->
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-01.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="eager"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-02.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-03.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-04.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-05.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-06.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-07.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-08.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-09.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-10.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-12.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-15.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-17.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-19.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-img0959.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-img8715.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-img9314.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-img0952.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-img7112.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-img7206.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+      <a href="contact.html" class="gcard" style="aspect-ratio:4/3;" data-cat="landmark" aria-label="CW Metals project — awaiting caption">
+        <img src="assets/img/gallery/gallery-jan07.jpg" alt="Landmark restoration — architectural metalwork by CW Metals" loading="lazy"/>
+        <div class="gcard-caption">
+          <p class="gcard-caption-name"><span class="verify">[[VERIFY: project name]]</span></p>
+          <p class="gcard-caption-meta"><span class="verify">[[VERIFY: scope · material · borough]]</span><br/>Architect: <span class="verify">[[VERIFY]]</span> · GC: <span class="verify">[[VERIFY]]</span></p>
+        </div>
+      </a>
+
+    </div><!-- /portfolio-grid -->
+
+    <!-- No results message (hidden by default) -->
+    <p id="no-results" style="display:none;text-align:center;color:var(--text-steel-dim);padding:3rem 0;font-size:0.9rem;">No projects in this category yet.</p>
+
+    <!-- CTA -->
+    <div class="text-center" style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(168,178,188,0.06);">
+      <p style="font-size:0.875rem;color:var(--text-steel);margin-bottom:1.25rem;">Have a project in a similar vein? Let's talk.</p>
+      <a href="contact.html" class="btn-copper">Request Estimate for Your Project</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="site-footer" style="padding:3.5rem 0 2rem;">
+  <div class="max-w-site mx-auto px-site">
+    <div style="display:grid;gap:2.5rem;margin-bottom:2.5rem;" class="md:grid-cols-3">
+      <div>
+        <div class="footer-wordmark" style="margin-bottom:0.375rem;">CW Metals Inc.</div>
+        <div style="font-size:0.7rem;color:var(--text-steel-dim);">Ornamental Metal Stamping &amp; Architectural Sheet Metal · New York City</div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Navigation</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="products.html" class="footer-link">Products &amp; Capabilities</a>
+          <a href="areas.html" class="footer-link">Areas We Serve</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.875rem;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <a href="mailto:estimating@cwmetalsinc.com" class="footer-link">estimating@cwmetalsinc.com</a>
+          <a href="tel:9174167906" class="footer-link">917-416-7906</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;border-top:1px solid rgba(168,178,188,0.06);">
+      <span id="footer-year" style="font-size:0.75rem;color:var(--text-steel-dim);">© 2025 CW Metals Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const yr = document.getElementById('footer-year');
+  if(yr) yr.textContent = '© ' + new Date().getFullYear() + ' CW Metals Inc. All rights reserved.';
+  const nav = document.getElementById('site-nav');
+  if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+
+  /* Filter tabs */
+  const tabs = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.gcard[data-cat]');
+  const noResults = document.getElementById('no-results');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(){
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const f = this.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const cats = card.dataset.cat || '';
+        const show = f === 'all' || cats.split(' ').includes(f);
+        card.classList.toggle('hidden-card', !show);
+        if(show) visible++;
+      });
+      if(noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+
+  /* Hover-reveal touch */
+  cards.forEach(card => {
+    card.addEventListener('click', function(e){
+      if(!this.classList.contains('is-active')){
+        e.preventDefault();
+        document.querySelectorAll('.gcard.is-active').forEach(c => c.classList.remove('is-active'));
+        this.classList.add('is-active');
+      }
+    });
+  });
+  document.addEventListener('click', e => {
+    if(!e.target.closest('.gcard')) document.querySelectorAll('.gcard.is-active').forEach(c => c.classList.remove('is-active'));
+  });
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('open'));
+    mobileDrawer.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileDrawer.classList.remove('open')));
+  }
+  (function(){ const btn=document.getElementById('contact-nav-btn'); const dd=document.getElementById('contact-dropdown'); if(!btn||!dd) return; btn.addEventListener('click',function(e){ e.stopPropagation(); const open=dd.style.display!=='none'; dd.style.display=open?'none':'block'; btn.classList.toggle('open',!open); btn.setAttribute('aria-expanded',String(!open)); }); document.addEventListener('click',function(){ dd.style.display='none'; btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }); })();
+})();
+</script>
+</body>
+</html>
