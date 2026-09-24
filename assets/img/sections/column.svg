@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" fill="none">
+<defs><pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" stroke="#FFFFFF" stroke-opacity=".045" stroke-width=".6"/></pattern><pattern id="brick" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#5B6672" stroke-width="1"/></pattern><pattern id="cmu" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#4E5864" stroke-width=".8"/><line x1="3.5" y1="0" x2="3.5" y2="7" stroke="#4E5864" stroke-width=".4"/></pattern><pattern id="wood" width="10" height="5" patternUnits="userSpaceOnUse"><path d="M0 2.5 Q2.5 0.6 5 2.5 T10 2.5" stroke="#7A6650" stroke-width=".7"/></pattern><pattern id="conc" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".7" fill="#66717C"/><circle cx="6.5" cy="7" r=".5" fill="#66717C"/><path d="M5 1.5 l1.2 1 -1.4.4z" fill="#66717C"/></pattern><pattern id="insul" width="8" height="6" patternUnits="userSpaceOnUse"><path d="M0 3 Q2 0 4 3 T8 3" stroke="#6C7682" stroke-width=".6"/></pattern></defs>
+<style>.m{stroke:#E3A866;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round}.m2{stroke:#E3A866;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}.gl{stroke:#9FC3D1;stroke-width:1.6;stroke-linecap:round}.sb{stroke:#7C8591;stroke-width:.9}.hb{fill:url(#brick);stroke:#7C8591;stroke-width:.9}.hc{fill:url(#cmu);stroke:#7C8591;stroke-width:.9}.hw{fill:url(#wood);stroke:#8A7760;stroke-width:.9}.hk{fill:url(#conc);stroke:#7C8591;stroke-width:.9}.hi{fill:url(#insul);stroke:#6C7682;stroke-width:.7}.fr{fill:#2A3038;stroke:#8A949E;stroke-width:.9}.dash{stroke:#8A9099;stroke-width:.7;stroke-dasharray:3 2}.ld{stroke:#A7B0BA;stroke-width:.6}.dot{fill:#DDE3E8}.t{fill:#E4E8EC;font:600 7.2px Inter,Arial,sans-serif;letter-spacing:.07em}.tt{fill:#E3A866;font:700 8.4px Inter,Arial,sans-serif;letter-spacing:.14em}.ts{fill:#8C96A0;font:500 6.4px Inter,Arial,sans-serif;letter-spacing:.12em}</style>
+<rect width="360" height="300" fill="url(#grid)"/>
+<circle class="hk" cx="180.00" cy="167.00" r="47.23"/>
+<path class="m" d="M232.45 165.17 L232.29 162.49 L231.99 159.82 L231.55 157.17 L230.98 154.54 L230.28 151.95 L229.44 149.40 L228.47 146.89 L227.38 144.43 L226.16 142.04 L224.83 139.71 L223.37 137.45 L221.80 135.27 L220.12 133.17 L218.34 131.16 L216.46 129.25 L214.48 127.43 L212.41 125.72 L210.25 124.12 L208.02 122.62 L205.71 121.25 L203.33 119.99 L200.90 118.86 L198.41 117.85 L195.87 116.98 L193.29 116.23 L190.67 115.62 L188.03 115.14 L185.36 114.79 L182.69 114.59 L180.00 114.52 L177.31 114.59 L174.64 114.79 L171.97 115.14 L169.33 115.62 L166.71 116.23 L164.13 116.98 L161.59 117.85 L159.10 118.86 L156.67 119.99 L154.29 121.25 L151.98 122.62 L149.75 124.12 L147.59 125.72 L145.52 127.43 L143.54 129.25 L141.66 131.16 L139.88 133.17 L138.20 135.27 L136.63 137.45 L135.17 139.71 L133.84 142.04 L132.62 144.43 L131.53 146.89 L130.56 149.40 L129.72 151.95 L129.02 154.54 L128.45 157.17 L128.01 159.82 L127.71 162.49 L127.55 165.17"/>
+<path class="m" d="M127.55 168.83 L127.71 171.51 L128.01 174.18 L128.45 176.83 L129.02 179.46 L129.72 182.05 L130.56 184.60 L131.53 187.11 L132.62 189.57 L133.84 191.96 L135.17 194.29 L136.63 196.55 L138.20 198.73 L139.88 200.83 L141.66 202.84 L143.54 204.75 L145.52 206.57 L147.59 208.28 L149.75 209.88 L151.98 211.38 L154.29 212.75 L156.67 214.01 L159.10 215.14 L161.59 216.15 L164.13 217.02 L166.71 217.77 L169.33 218.38 L171.97 218.86 L174.64 219.21 L177.31 219.41 L180.00 219.48 L182.69 219.41 L185.36 219.21 L188.03 218.86 L190.67 218.38 L193.29 217.77 L195.87 217.02 L198.41 216.15 L200.90 215.14 L203.33 214.01 L205.71 212.75 L208.02 211.38 L210.25 209.88 L212.41 208.28 L214.48 206.57 L216.46 204.75 L218.34 202.84 L220.12 200.83 L221.80 198.73 L223.37 196.55 L224.83 194.29 L226.16 191.96 L227.38 189.57 L228.47 187.11 L229.44 184.60 L230.28 182.05 L230.98 179.46 L231.55 176.83 L231.99 174.18 L232.29 171.51 L232.45 168.83"/>
+<path class="m2" d="M232.48 167.00 L237.73 167.00"/>
+<path class="m2" d="M127.52 167.00 L122.27 167.00"/>
+<circle class="dash" cx="180.00" cy="167.00" r="56.42"/>
+<path class="ld" d="M122.3 167.0 L96.0 164.4 H88.0"/>
+<circle class="dot" cx="122.3" cy="167.0" r="1.5"/>
+<text class="t" x="14" y="167.0" text-anchor="start">VERTICAL SEAM</text>
+<path class="ld" d="M166.9 186.7 L96.0 184.1 H88.0"/>
+<circle class="dot" cx="166.9" cy="186.7" r="1.5"/>
+<text class="t" x="14" y="186.7" text-anchor="start">STRUCTURAL</text>
+<text class="t" x="14" y="195.3" text-anchor="start">COLUMN</text>
+<path class="ld" d="M217.1 129.9 L264.0 127.3 H272.0"/>
+<circle class="dot" cx="217.1" cy="129.9" r="1.5"/>
+<text class="t" x="346" y="129.9" text-anchor="end">TWO-PIECE</text>
+<text class="t" x="346" y="138.5" text-anchor="end">COVER</text>
+<path class="ld" d="M237.7 167.0 L264.0 164.4 H272.0"/>
+<circle class="dot" cx="237.7" cy="167.0" r="1.5"/>
+<text class="t" x="346" y="167.0" text-anchor="end">VERTICAL SEAM</text>
+<path class="ld" d="M216.1 208.3 L264.0 205.7 H272.0"/>
+<circle class="dot" cx="216.1" cy="208.3" r="1.5"/>
+<text class="t" x="346" y="208.3" text-anchor="end">BASE TRIM</text>
+<text class="t" x="346" y="216.9" text-anchor="end">(DASHED)</text>
+<text class="tt" x="14" y="22">PLAN SECTION — COLUMN COVER</text>
+<text class="ts" x="14" y="33">TYPICAL DETAIL · NOT TO SCALE</text>
+<text class="ts" x="346" y="22" text-anchor="end">CW METALS INC.</text>
+<path class="ld" d="M14 40 H346" stroke-opacity=".5"/>
+</svg>

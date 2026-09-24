@@ -468,3 +468,10 @@ select.form-input option { background: #1E2126; color: var(--ink-on-dark); }
 @media (min-width: 1024px) {
   .px-site { padding-left: 2.5rem; padding-right: 2.5rem; }
 }
+
+/* RFQ form status */
+.form-status:empty { display: none; }
+.form-status { margin-top: 1rem; padding: 12px 14px; border-radius: 3px; font-size: 0.8125rem; line-height: 1.6; }
+.form-status.ok { background: rgba(58,125,36,0.12); border: 1px solid rgba(58,125,36,0.35); color: #cfe8c4; }
+.form-status.err { background: rgba(239,68,68,0.10); border: 1px solid rgba(239,68,68,0.35); color: #f5c9c9; }
+.form-status a { color: #D4A057; text-decoration: underline; }

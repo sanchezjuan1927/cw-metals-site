@@ -165,10 +165,34 @@
       transform: translateY(-6px);
     }
     .cat-card-img {
+      position: relative;
       width: 100%; height: 300px;
-      object-fit: cover; display: block;
-      background: #e6e8eb;
+      display: block; overflow: hidden;
+      background: #fff;
     }
+    .cat-card-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .cat-card-section {
+      position: absolute; inset: 0;
+      background: #171B20;
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    .cat-card-section img { width: 100%; height: 100%; display: block; }
+    .cat-card-tag {
+      position: absolute; left: 12px; bottom: 12px;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 9px; border-radius: 2px;
+      background: rgba(255,255,255,0.92); border: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #8B5A1A; transition: opacity 0.25s ease;
+    }
+    .cat-card-tag::before { content: ''; width: 10px; height: 1px; background: currentColor; }
+    .cat-card:hover .cat-card-section, .cat-card:focus-visible .cat-card-section, .cat-card.show-section .cat-card-section { opacity: 1; }
+    .cat-card:hover .cat-card-photo, .cat-card.show-section .cat-card-photo { transform: scale(1.03); }
+    .cat-card:hover .cat-card-tag, .cat-card:focus-visible .cat-card-tag, .cat-card.show-section .cat-card-tag { opacity: 0; }
     .cat-card-body {
       padding: 1.5rem 1.5rem 1.75rem;
       flex: 1; display: flex; flex-direction: column;
@@ -344,7 +368,11 @@
 
           <!-- SET 1 -->
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/coping.jpg" alt="Charcoal coping cap on a brick parapet, with joint cover plate and continuous cleat" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/coping.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Copings &amp; Coping Caps</div>
               <p class="cat-card-desc">Fabricated to profile from copper, galvanized, stainless, or zinc. Custom lengths and end conditions with shop drawings included.</p>
@@ -352,7 +380,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/parapet.jpg" alt="Galvanized parapet cap with a mitred outside corner on a brick parapet" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/parapet.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Parapet Caps</div>
               <p class="cat-card-desc">Single-piece and segmented parapet caps for new construction and restoration in all standard metals and custom profiles.</p>
@@ -360,7 +392,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/flashing.jpg" alt="Copper through-wall flashing with hemmed drip and end dam on a brick course" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/flashing.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Flashings &amp; Step Flashings</div>
               <p class="cat-card-desc">Through-wall, counter, base, and step flashings cut and formed to your architect's specifications in any metal.</p>
@@ -368,7 +404,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/column.jpg" alt="Round brushed stainless and square painted column covers" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/column.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Column Covers</div>
               <p class="cat-card-desc">Welded and seamed column covers for round, square, and custom profiles in copper, aluminum, and stainless steel.</p>
@@ -376,7 +416,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/gutter.jpg" alt="Copper half-round gutter with shank hangers, end cap and offset leader" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/gutter.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Gutters &amp; Leaders</div>
               <p class="cat-card-desc">Half-round, ogee, box, and custom gutter profiles. Copper leaders, standpipes, and conductor heads fabricated in-house.</p>
@@ -384,7 +428,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/cornice.jpg" alt="Sheet metal cornice with crown, modillions and dentil course on a brick wall" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/cornice.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Cornices &amp; Profiles</div>
               <p class="cat-card-desc">Modular cornice sections and decorative profiles reproduced from original drawings or field measurement.</p>
@@ -392,7 +440,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/window.jpg" alt="Metal window surround with head flashing, jamb returns and sloped sill in a brick wall" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/window.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Window Surrounds</div>
               <p class="cat-card-desc">Sheet metal window trim, sills, lintels, and surrounds in galvanized, stainless, or copper to architect's detail.</p>
@@ -400,7 +452,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/skylight.jpg" alt="Copper hip skylight with glazing on a copper-clad curb" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/skylight.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Skylights &amp; Monitors</div>
               <p class="cat-card-desc">Custom skylight curbs, monitors, and metal glazing frames fabricated to drawing or field measurement.</p>
@@ -410,7 +466,11 @@
 
           <!-- SET 2 — duplicate for seamless loop -->
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/coping.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/coping.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Copings &amp; Coping Caps</div>
               <p class="cat-card-desc">Fabricated to profile from copper, galvanized, stainless, or zinc. Custom lengths and end conditions with shop drawings included.</p>
@@ -418,7 +478,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/parapet.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/parapet.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Parapet Caps</div>
               <p class="cat-card-desc">Single-piece and segmented parapet caps for new construction and restoration in all standard metals and custom profiles.</p>
@@ -426,7 +490,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/flashing.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/flashing.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Flashings &amp; Step Flashings</div>
               <p class="cat-card-desc">Through-wall, counter, base, and step flashings cut and formed to your architect's specifications in any metal.</p>
@@ -434,7 +502,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/column.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/column.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Column Covers</div>
               <p class="cat-card-desc">Welded and seamed column covers for round, square, and custom profiles in copper, aluminum, and stainless steel.</p>
@@ -442,7 +514,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/gutter.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/gutter.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Gutters &amp; Leaders</div>
               <p class="cat-card-desc">Half-round, ogee, box, and custom gutter profiles. Copper leaders, standpipes, and conductor heads fabricated in-house.</p>
@@ -450,7 +526,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/cornice.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/cornice.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Cornices &amp; Profiles</div>
               <p class="cat-card-desc">Modular cornice sections and decorative profiles reproduced from original drawings or field measurement.</p>
@@ -458,7 +538,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/window.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/window.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Window Surrounds</div>
               <p class="cat-card-desc">Sheet metal window trim, sills, lintels, and surrounds in galvanized, stainless, or copper to architect's detail.</p>
@@ -466,7 +550,11 @@
             </div>
           </a>
           <a href="products.html#sheetmetal" class="cat-card" aria-hidden="true">
-            <div class="cat-card-img"></div>
+            <div class="cat-card-img">
+              <img class="cat-card-photo" src="assets/img/products/skylight.jpg" alt="" width="720" height="600" loading="lazy" decoding="async"/>
+              <div class="cat-card-section" aria-hidden="true"><img src="assets/img/sections/skylight.svg" alt="" loading="lazy"/></div>
+              <span class="cat-card-tag" aria-hidden="true">Section detail</span>
+            </div>
             <div class="cat-card-body">
               <div class="cat-card-title">Skylights &amp; Monitors</div>
               <p class="cat-card-desc">Custom skylight curbs, monitors, and metal glazing frames fabricated to drawing or field measurement.</p>
@@ -632,7 +720,7 @@
             <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;pointer-events:none;">
               <svg class="w-10 h-10" style="color:var(--steel);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
               <div style="text-align:center;"><p style="color:var(--ink-on-dark);font-size:0.875rem;font-weight:500;margin-bottom:2px;">Drag &amp; drop files here</p><p style="color:var(--steel);font-size:0.75rem;">or <span style="color:#D4A057;text-decoration:underline;">browse to upload</span></p></div>
-              <p style="color:var(--steel);font-size:0.75rem;">PDF, DWG, DXF, STP, JPG, PNG, ZIP &middot; Max 250 MB per file</p>
+              <p style="color:var(--steel);font-size:0.75rem;">PDF, DWG, DXF, STP, JPG, PNG, ZIP &middot; Up to 15 MB total · larger sets: email us a link</p>
             </div>
             <div id="q-file-list" class="hidden" style="margin-top:1rem;display:flex;flex-direction:column;gap:6px;pointer-events:none;"></div>
           </div>
@@ -641,6 +729,8 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           Submit Quote Request
         </button>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"/>
+        <div class="form-status" role="status" aria-live="polite"></div>
       </form>
 
       <!-- Right: Map -->
@@ -755,7 +845,7 @@
     let paused = false;
 
     function tick() {
-      if (!paused) {
+      if (!paused && !track.querySelector('.show-section')) {
         pos += SPEED;
         if (pos >= HALF) pos -= HALF;
         track.style.transform = 'translateX(' + (-pos) + 'px)';
@@ -815,6 +905,22 @@
     });
   })();
 
+  // Product range: on touch screens the first tap shows the section drawing, the second opens the link
+  if (window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.cat-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (!this.classList.contains('show-section')) {
+          e.preventDefault();
+          document.querySelectorAll('.cat-card.show-section').forEach(c => c.classList.remove('show-section'));
+          this.classList.add('show-section');
+        }
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.cat-card')) document.querySelectorAll('.cat-card.show-section').forEach(c => c.classList.remove('show-section'));
+    });
+  }
+
   // hcard / gcard touch toggle
   document.querySelectorAll('.hcard, .gcard').forEach(card => {
     card.addEventListener('click', function(e) {
@@ -854,35 +960,9 @@
     });
   }
 
-  // Form validation
-  const form = document.getElementById('quote-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      let ok = true;
-      this.querySelectorAll('[required]').forEach(f => {
-        f.style.borderColor = '';
-        f.style.boxShadow = '';
-        if (!f.value.trim()) {
-          f.style.borderColor = 'rgba(239,68,68,0.6)';
-          f.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
-          ok = false;
-        }
-      });
-      if (ok) {
-        const btn = this.querySelector('button[type=submit]');
-        btn.textContent = 'Submitted — we will be in touch within 24h';
-        btn.style.background = 'linear-gradient(135deg,#2d5a1b,#3a7d24)';
-        btn.disabled = true;
-      }
-    });
-    form.querySelectorAll('[required]').forEach(f => f.addEventListener('input', () => {
-      f.style.borderColor = '';
-      f.style.boxShadow = '';
-    }));
-  }
 })();
 </script>
 
+<script src="assets/js/rfq.js" defer></script>
 </body>
 </html>

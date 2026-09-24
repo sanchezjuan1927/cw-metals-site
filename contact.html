@@ -170,7 +170,7 @@
               <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;pointer-events:none;">
                 <svg class="w-10 h-10" style="color:var(--text-steel);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
                 <div style="text-align:center;"><p style="color:var(--text-parchment);font-size:0.875rem;font-weight:500;margin-bottom:2px;">Drag &amp; drop files here</p><p style="color:var(--text-steel);font-size:0.75rem;">or <span style="color:var(--copper-light);text-decoration:underline;">browse to upload</span></p></div>
-                <p style="color:var(--text-steel-dim);font-size:0.75rem;">PDF, DWG, DXF, STP, RVT, IFC, JPG, PNG, ZIP Â· Max 250 MB per file</p>
+                <p style="color:var(--text-steel-dim);font-size:0.75rem;">PDF, DWG, DXF, STP, RVT, IFC, JPG, PNG, ZIP Â· Up to 15 MB total · larger sets: email us a link</p>
               </div>
               <div id="rfq-file-list" class="hidden" style="margin-top:1rem;display:flex;flex-direction:column;gap:6px;pointer-events:none;"></div>
             </div>
@@ -190,7 +190,9 @@
               Call 917-416-7906
             </a>
           </div>
-        </form>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"/>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
       </div>
     </div>
   </div>
@@ -257,23 +259,6 @@
     });
   }
 
-  const form = document.querySelector('form[aria-label="Request for Quote form"]');
-  if(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault(); let ok=true;
-      this.querySelectorAll('[required]').forEach(f=>{
-        f.style.borderColor='';
-        if(!f.value.trim()){ f.style.borderColor='rgba(239,68,68,0.6)'; f.style.boxShadow='0 0 0 3px rgba(239,68,68,0.1)'; ok=false; }
-      });
-      if(ok){
-        const btn=this.querySelector('button[type="submit"]');
-        btn.textContent='âœ“ RFQ Submitted â€” We\'ll be in touch within 24h';
-        btn.style.background='linear-gradient(135deg,#2d5a1b,#3a7d24)';
-        btn.disabled=true;
-      }
-    });
-    form.querySelectorAll('[required]').forEach(f=>f.addEventListener('input',()=>{ f.style.borderColor=''; f.style.boxShadow=''; }));
-  }
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
   if (mobileBtn && mobileDrawer) {
@@ -283,5 +268,6 @@
   (function(){ const btn=document.getElementById('contact-nav-btn'); const dd=document.getElementById('contact-dropdown'); if(!btn||!dd) return; btn.addEventListener('click',function(e){ e.stopPropagation(); const open=dd.style.display!=='none'; dd.style.display=open?'none':'block'; btn.classList.toggle('open',!open); btn.setAttribute('aria-expanded',String(!open)); }); document.addEventListener('click',function(){ dd.style.display='none'; btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }); })();
 })();
 </script>
+<script src="assets/js/rfq.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" fill="none">
+<defs><pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" stroke="#FFFFFF" stroke-opacity=".045" stroke-width=".6"/></pattern><pattern id="brick" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#5B6672" stroke-width="1"/></pattern><pattern id="cmu" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#4E5864" stroke-width=".8"/><line x1="3.5" y1="0" x2="3.5" y2="7" stroke="#4E5864" stroke-width=".4"/></pattern><pattern id="wood" width="10" height="5" patternUnits="userSpaceOnUse"><path d="M0 2.5 Q2.5 0.6 5 2.5 T10 2.5" stroke="#7A6650" stroke-width=".7"/></pattern><pattern id="conc" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".7" fill="#66717C"/><circle cx="6.5" cy="7" r=".5" fill="#66717C"/><path d="M5 1.5 l1.2 1 -1.4.4z" fill="#66717C"/></pattern><pattern id="insul" width="8" height="6" patternUnits="userSpaceOnUse"><path d="M0 3 Q2 0 4 3 T8 3" stroke="#6C7682" stroke-width=".6"/></pattern></defs>
+<style>.m{stroke:#E3A866;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round}.m2{stroke:#E3A866;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}.gl{stroke:#9FC3D1;stroke-width:1.6;stroke-linecap:round}.sb{stroke:#7C8591;stroke-width:.9}.hb{fill:url(#brick);stroke:#7C8591;stroke-width:.9}.hc{fill:url(#cmu);stroke:#7C8591;stroke-width:.9}.hw{fill:url(#wood);stroke:#8A7760;stroke-width:.9}.hk{fill:url(#conc);stroke:#7C8591;stroke-width:.9}.hi{fill:url(#insul);stroke:#6C7682;stroke-width:.7}.fr{fill:#2A3038;stroke:#8A949E;stroke-width:.9}.dash{stroke:#8A9099;stroke-width:.7;stroke-dasharray:3 2}.ld{stroke:#A7B0BA;stroke-width:.6}.dot{fill:#DDE3E8}.t{fill:#E4E8EC;font:600 7.2px Inter,Arial,sans-serif;letter-spacing:.07em}.tt{fill:#E3A866;font:700 8.4px Inter,Arial,sans-serif;letter-spacing:.14em}.ts{fill:#8C96A0;font:500 6.4px Inter,Arial,sans-serif;letter-spacing:.12em}</style>
+<rect width="360" height="300" fill="url(#grid)"/>
+<path class="hb" d="M110.15 242.93 L221.00 242.93 L221.00 177.63 L110.15 177.63 Z"/>
+<path class="hb" d="M110.15 176.11 L221.00 176.11 L221.00 91.07 L110.15 91.07 Z"/>
+<path class="hc" d="M225.56 242.93 L262.00 242.93 L262.00 91.07 L225.56 91.07 Z"/>
+<path class="dash" d="M107.62 160.93 L223.53 136.63"/>
+<path class="m" d="M107.25 179.79 L102.00 185.04 L101.90 185.12 L101.80 185.16 L101.68 185.18 L101.57 185.16 L101.46 185.12 L101.37 185.04 L101.35 185.03 L101.28 184.94 L101.23 184.83 L101.21 184.71 L101.22 184.59 L101.26 184.48 L101.33 184.38 L107.31 177.47 L107.42 177.37 L107.53 177.28 L107.66 177.21 L107.79 177.16 L107.94 177.13 L108.08 177.12 L222.52 177.12 L222.78 177.09 L223.02 176.99 L223.23 176.83 L223.40 176.62 L223.50 176.37 L223.53 176.11 L223.53 136.63"/>
+<path class="ld" d="M150.6 121.4 L96.0 118.8 H88.0"/>
+<circle class="dot" cx="150.6" cy="121.4" r="1.5"/>
+<text class="t" x="14" y="121.4" text-anchor="start">BRICK VENEER</text>
+<path class="ld" d="M160.8 177.1 L96.0 174.5 H88.0"/>
+<circle class="dot" cx="160.8" cy="177.1" r="1.5"/>
+<text class="t" x="14" y="177.1" text-anchor="start">FLASHING PAN</text>
+<path class="ld" d="M102.0 183.4 L96.0 190.1 H88.0"/>
+<circle class="dot" cx="102.0" cy="183.4" r="1.5"/>
+<text class="t" x="14" y="192.7" text-anchor="start">HEMMED DRIP</text>
+<text class="t" x="14" y="201.3" text-anchor="start">PAST WALL FACE</text>
+<path class="ld" d="M223.5 146.8 L264.0 144.2 H272.0"/>
+<circle class="dot" cx="223.5" cy="146.8" r="1.5"/>
+<text class="t" x="346" y="146.8" text-anchor="end">BACK LEG</text>
+<text class="t" x="346" y="155.4" text-anchor="end">TURNED UP</text>
+<path class="ld" d="M140.5 153.8 L264.0 168.4 H272.0"/>
+<circle class="dot" cx="140.5" cy="153.8" r="1.5"/>
+<text class="t" x="346" y="171.0" text-anchor="end">END DAM</text>
+<text class="t" x="346" y="179.6" text-anchor="end">AT EACH END</text>
+<path class="ld" d="M243.8 212.6 L264.0 210.0 H272.0"/>
+<circle class="dot" cx="243.8" cy="212.6" r="1.5"/>
+<text class="t" x="346" y="212.6" text-anchor="end">BACK-UP WALL</text>
+<text class="tt" x="14" y="22">SECTION — THROUGH-WALL FLASHING</text>
+<text class="ts" x="14" y="33">TYPICAL DETAIL · NOT TO SCALE</text>
+<text class="ts" x="346" y="22" text-anchor="end">CW METALS INC.</text>
+<path class="ld" d="M14 40 H346" stroke-opacity=".5"/>
+</svg>

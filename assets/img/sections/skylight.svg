@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" fill="none">
+<defs><pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" stroke="#FFFFFF" stroke-opacity=".045" stroke-width=".6"/></pattern><pattern id="brick" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#5B6672" stroke-width="1"/></pattern><pattern id="cmu" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#4E5864" stroke-width=".8"/><line x1="3.5" y1="0" x2="3.5" y2="7" stroke="#4E5864" stroke-width=".4"/></pattern><pattern id="wood" width="10" height="5" patternUnits="userSpaceOnUse"><path d="M0 2.5 Q2.5 0.6 5 2.5 T10 2.5" stroke="#7A6650" stroke-width=".7"/></pattern><pattern id="conc" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".7" fill="#66717C"/><circle cx="6.5" cy="7" r=".5" fill="#66717C"/><path d="M5 1.5 l1.2 1 -1.4.4z" fill="#66717C"/></pattern><pattern id="insul" width="8" height="6" patternUnits="userSpaceOnUse"><path d="M0 3 Q2 0 4 3 T8 3" stroke="#6C7682" stroke-width=".6"/></pattern></defs>
+<style>.m{stroke:#E3A866;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round}.m2{stroke:#E3A866;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}.gl{stroke:#9FC3D1;stroke-width:1.6;stroke-linecap:round}.sb{stroke:#7C8591;stroke-width:.9}.hb{fill:url(#brick);stroke:#7C8591;stroke-width:.9}.hc{fill:url(#cmu);stroke:#7C8591;stroke-width:.9}.hw{fill:url(#wood);stroke:#8A7760;stroke-width:.9}.hk{fill:url(#conc);stroke:#7C8591;stroke-width:.9}.hi{fill:url(#insul);stroke:#6C7682;stroke-width:.7}.fr{fill:#2A3038;stroke:#8A949E;stroke-width:.9}.dash{stroke:#8A9099;stroke-width:.7;stroke-dasharray:3 2}.ld{stroke:#A7B0BA;stroke-width:.6}.dot{fill:#DDE3E8}.t{fill:#E4E8EC;font:600 7.2px Inter,Arial,sans-serif;letter-spacing:.07em}.tt{fill:#E3A866;font:700 8.4px Inter,Arial,sans-serif;letter-spacing:.14em}.ts{fill:#8C96A0;font:500 6.4px Inter,Arial,sans-serif;letter-spacing:.12em}</style>
+<rect width="360" height="300" fill="url(#grid)"/>
+<path class="hk" d="M91.17 224.23 L268.83 224.23 L268.83 210.56 L91.17 210.56 Z"/>
+<path class="sb" d="M91.17 210.39 L268.83 210.39"/>
+<path class="hw" d="M118.50 210.22 L123.97 210.22 L123.97 183.23 L118.50 183.23 Z"/>
+<path class="hw" d="M236.03 210.22 L241.50 210.22 L241.50 183.23 L236.03 183.23 Z"/>
+<path class="m2" d="M104.83 210.05 L118.16 210.05 L118.16 182.20 L124.31 182.20"/>
+<path class="m2" d="M255.17 210.05 L241.84 210.05 L241.84 182.20 L235.69 182.20"/>
+<path class="fr" d="M112.69 183.23 L118.84 183.23 L118.84 174.35 L112.69 174.35 Z"/>
+<path class="fr" d="M241.16 183.23 L247.31 183.23 L247.31 174.35 L241.16 174.35 Z"/>
+<path class="gl" d="M117.82 174.35 L180.00 118.31 L242.18 174.35"/>
+<path class="m" d="M115.77 174.35 L180.00 116.26 L244.23 174.35"/>
+<path class="fr" d="M175.90 120.02 L184.10 120.02 L184.10 111.48 L175.90 111.48 Z"/>
+<path class="ld" d="M149.2 143.6 L96.0 141.0 H88.0"/>
+<circle class="dot" cx="149.2" cy="143.6" r="1.5"/>
+<text class="t" x="14" y="143.6" text-anchor="start">COPPER HIP BAR</text>
+<path class="ld" d="M115.8 178.8 L96.0 176.2 H88.0"/>
+<circle class="dot" cx="115.8" cy="178.8" r="1.5"/>
+<text class="t" x="14" y="178.8" text-anchor="start">BASE FRAME</text>
+<path class="ld" d="M118.2 196.9 L96.0 194.3 H88.0"/>
+<circle class="dot" cx="118.2" cy="196.9" r="1.5"/>
+<text class="t" x="14" y="196.9" text-anchor="start">COPPER CURB</text>
+<text class="t" x="14" y="205.5" text-anchor="start">CLADDING</text>
+<path class="ld" d="M180.0 112.8 L264.0 110.2 H272.0"/>
+<circle class="dot" cx="180.0" cy="112.8" r="1.5"/>
+<text class="t" x="346" y="112.8" text-anchor="end">FINIAL</text>
+<path class="ld" d="M207.3 151.1 L264.0 148.5 H272.0"/>
+<circle class="dot" cx="207.3" cy="151.1" r="1.5"/>
+<text class="t" x="346" y="151.1" text-anchor="end">GLAZING</text>
+<path class="ld" d="M238.8 196.9 L264.0 194.3 H272.0"/>
+<circle class="dot" cx="238.8" cy="196.9" r="1.5"/>
+<text class="t" x="346" y="196.9" text-anchor="end">WOOD CURB</text>
+<path class="ld" d="M214.2 217.4 L264.0 214.8 H272.0"/>
+<circle class="dot" cx="214.2" cy="217.4" r="1.5"/>
+<text class="t" x="346" y="217.4" text-anchor="end">ROOF DECK</text>
+<text class="tt" x="14" y="22">SECTION — HIP SKYLIGHT</text>
+<text class="ts" x="14" y="33">TYPICAL DETAIL · NOT TO SCALE</text>
+<text class="ts" x="346" y="22" text-anchor="end">CW METALS INC.</text>
+<path class="ld" d="M14 40 H346" stroke-opacity=".5"/>
+</svg>
